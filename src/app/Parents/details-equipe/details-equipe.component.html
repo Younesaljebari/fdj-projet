@@ -1,0 +1,28 @@
+<div class="div-center-contenu margin-top10">
+    <div>     
+   
+        <mat-card>
+            <img mat-card-image src={{teams.strTeamBanner}} alt="equipe">
+            <div class="row">
+                <div class="col-1">
+                    <img mat-card-md-image src={{teams.strTeamBadge}} alt="equipe" style="padding: 5px;">
+                </div>
+                <div class="col">
+                    <h1>{{teams.strTeam}}</h1>
+                    <h4>{{teams.strLeague}}</h4>
+                </div>
+            </div>           
+        </mat-card>
+        <mat-card style="margin-top: 10px;">
+            <mat-card-content>{{teams.strDescriptionEN}}</mat-card-content>
+        </mat-card>
+        <mat-card style="margin-top: 10px;">
+            <mat-card-content>{{teams.strStadiumDescription}}</mat-card-content>
+        </mat-card>      
+    </div>
+</div>
+
+<div class="div-center-contenu margin-top10">
+        <button type="button" class="btn btn-outline-secondary styl-btn-return"  routerLink="/home"> < retour </button>
+</div>
+

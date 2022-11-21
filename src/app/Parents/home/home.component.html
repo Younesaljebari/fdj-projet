@@ -1,0 +1,46 @@
+<!-- search -->
+    <div class="align-title">
+      <h1>Trouver Votre Equipe  <strong class="color-2"> PARIONS SPORT ! </strong></h1>
+    </div>
+    <div class="div-center">
+      <div class="row">
+        <div class="col-4">    
+            <form [formGroup]="formGroup">
+              <mat-form-field class="style-inputSearch" appearance="outline">
+                  <mat-label>Trouvez votre Equipe </mat-label>
+                  <input formControlName="league" type="text"  matInput  [matAutocomplete]="auto">
+                <mat-autocomplete  #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of listLeagues" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </div>
+        <div class="col"> 
+          <button type="button" class="btn btn-outline-secondary btn-style" (click)="sendSearch()">Goo ..</button>
+        </div>
+      </div>
+    </div> 
+
+    <div class="div-center-contenu margin-top20" *ngIf="listEquipes$ | async  as listEquipe">
+            <div class="container-flex" style="padding: 10px;" >
+                <div class="item-style" *ngFor="let team of listEquipe">
+                    <mat-card class="style-card" [routerLink]="['/detail', team.strTeam]">
+                        <mat-card-header style="height: 100px;">
+                          <div mat-card-avatar><img mat-card-image src={{team.strTeamBadge}} alt="equipe" 
+                          style="padding: 10px;
+                            width: 70px;
+                            height: 70px;"></div>
+                          <mat-card-title class="color-primary">{{team['strTeam']}} </mat-card-title>
+                          <mat-card-subtitle><strong>{{team['strLeague']}}</strong></mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{team.strTeamBadge}} alt="equipe" style="padding: 5px;">
+                        <mat-card-actions>
+                          <button mat-button (click)="sendEquipe(team)" [routerLink]="['/detail', team.strTeam]"  matTooltip="Accedez à votre équipe préférée">Consulter</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+            </div>
+    </div>
+

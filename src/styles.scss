@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+    --primary: #7f4d8a;
+    --secondary: #69516f;
+    --text-onglet : #FFFFFF;
+    --warning : #ffca28;
+    --error : #ff6e40;
+    --title: #004493;
+    --sub-title: #546e7a;
+    --background : #eeeeee;
+}
+
+.color-2{
+    color:var(--title); 
+  }
+
+  .color-1{
+    color:var(--text-onglet); 
+  }
+ 
+  .size-small {
+    font-size: small;
+  }
+
+  .div-center-contenu{
+    background-color: var(--background); 
+    border-radius: 6px;
+    padding: 15px;
+}
+
